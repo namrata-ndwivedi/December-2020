@@ -1,0 +1,534 @@
+E:\VS Code Projects\Test Project\prog3.js
+
+//1. print odd numbers in an array
+
+//function
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+  
+    var sm = data.split(' ').map(str => parseInt(str));
+    
+    var result = findOdd(sm);
+    console.log(result);
+  //console.log(data)
+});
+
+function findOdd(arr){
+    newArray = [];
+    for(let i in arr){
+        if(arr[i] % 2 !== 0){
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+}
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+  
+    var sm = data.split(' ').map(str => parseInt(str));
+    
+    var result = (function (arr){
+    newArray = [];
+    for(let i in arr){
+        if(arr[i] % 2 !== 0){
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+})(sm);
+    
+    console.log(result);
+  //console.log(data)
+});
+
+//--------------------------------------------------------------------//
+
+//2. Convert all the strings to title caps in a string arrray
+//function
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.toLowerCase();
+    var smNew = sm.split(' ');
+    console.log(smNew);
+    
+    var result = titleCaseArray(smNew);
+    console.log(result.join(' '));
+});
+
+function titleCaseArray(arr){
+    var words = [];
+    for(var i = 0; i<arr.length; i++){
+        words[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    return words;
+}
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.toLowerCase();
+    var smNew = sm.split(' ');
+    console.log(smNew);
+    
+    var result = (function (arr){
+        var words = [];
+        for(var i = 0; i<arr.length; i++){
+            words[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+        }
+        return words;
+    })(smNew);
+    console.log(result.join(' '));
+});
+
+//-----------------------------------------------------------------------//
+
+//3. Sum of all numbers in an array
+//function
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.split(' ').map(str => parseInt(str));
+    var result = sm.reduce((accumulator, currentValue) => {
+        return (accumulator+currentValue);
+    });
+    console.log(result);
+});
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.split(' ').map(str => parseInt(str));
+    var sum = 0;
+    
+    var result = ((arr) => {
+        for(let i in arr){
+            sum += arr[i];
+        }
+        return sum;
+    })(sm);
+    
+    console.log(result);
+});
+
+//------------------------------------------------------------------//
+
+//4. Return all the prime numbers in an array
+//function
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.split(' ').map(str => parseInt(str));
+    var a = 11;
+    console.log(sm);
+    var result = primeArray(sm);
+    console.log(result);
+});
+
+function primeArray(arr){
+    var newArray = [];
+    var flag;
+    
+    for(i = 0; i < arr.length ; i++){
+      flag = true;
+      for(let j = 2; j <= parseInt(arr[i]/2); j++ ){
+          if(arr[i] === 1){
+              break;
+          }else if(arr[i] === 2){
+              newArray.push(arr[i]);
+              flag = true;
+              break;
+          }else if((arr[i] % j) === 0){
+              flag = false;
+              break;
+          }
+      }
+      if(flag === true){
+          newArray.push(arr[i]);
+      }
+    }
+    //console.log(newArray);
+    //console.log(flag);
+    return newArray;
+}
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.split(' ').map(str => parseInt(str));
+    console.log(sm);
+    var result = (function (arr){
+            var newArray = [];
+    var flag;
+    
+    for(i = 0; i < arr.length ; i++){
+      flag = true;
+      for(let j = 2; j <= parseInt(arr[i]/2); j++ ){
+          if(arr[i] === 1){
+              break;
+          }else if(arr[i] === 2){
+              //newArray.push(arr[i]);
+              flag = true;
+              break;
+          }else if((arr[i] % j) === 0){
+              flag = false;
+              break;
+          }
+      }
+      if(flag === true){
+          newArray.push(arr[i]);
+      }
+    }
+    
+    return newArray;    
+  })(sm);
+    console.log(result);
+});
+
+//-------------------------------------------------------------------------//
+
+//4. Return all the palindromes of an array
+//function
+//A Simple Hello World
+//console.log("Hello World");
+
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+  console.log(data)
+  var sm = data.split(' ');
+  console.log(sm);
+//   console.log(typeof(sm));
+  
+  var result = palindromeArray(sm);
+  console.log(result);
+});
+
+function palindromeArray(arr){
+    var newArray = [];
+    
+    console.log('arr: ' + arr.length);
+    // console.log(typeof(arr));
+    
+    //testcase
+    // var strArray = arr[1].split('').reverse().join('');
+    // console.log(strArray);
+        
+    for(i = 0; i < arr.length; i++){
+        var str = arr[i].split('').reverse().join('');
+        console.log(str);
+        
+        if(str === arr[i]){
+            // console.log('str: ' + str);
+            // console.log("arr[i]: " + arr[i]);
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+}
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+  console.log(data)
+  var sm = data.split(' ');
+  console.log(sm);
+//   console.log(typeof(sm));
+  
+  var result = (function (arr){
+    var newArray = [];
+    
+    console.log('arr: ' + arr.length);
+        
+    for(i = 0; i < arr.length; i++){
+        var str = arr[i].split('').reverse().join('');
+        // console.log(str);
+        
+        if(str === arr[i]){
+            // console.log('str: ' + str);
+            // console.log("arr[i]: " + arr[i]);
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+})(sm);
+  console.log(result);
+});
+
+//------------------------------------------------------------------------//
+
+//5. Return median of two sorted arrays of same size 
+//function
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    var arr1 = userInput[0].split(' ').map(str => parseInt(str));
+    var arr2 = userInput[1].split(' ').map(str => parseInt(str));
+    
+    var arr = arr1.concat(arr2);
+    console.log(arr);
+    
+    var arrSort = arr.sort((a,b) => {return (a-b);});
+    console.log(arrSort);
+    
+    var result = findMedian(arrSort);
+    console.log(result);
+    
+});
+
+function findMedian(arr){
+    //since 2 arrays are considered of same size, hence even length
+    let arrLength = arr.length;
+    let midElt = Math.floor(arrLength/2);
+    return (arrLength%2 !== 0) ?  arr[midElt] : (arr[midElt]+arr[midElt - 1])/2;
+    
+}
+
+//iife
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    var arr1 = userInput[0].split(' ').map(str => parseInt(str));
+    var arr2 = userInput[1].split(' ').map(str => parseInt(str));
+    
+    var arr = arr1.concat(arr2);
+    console.log(arr);
+    
+    var arrSort = arr.sort((a,b) => {return (a-b);});
+    console.log(arrSort);
+    
+    var result = (function (arr){
+    //since 2 arrays are considered of same size, hence even length
+    let arrLength = arr.length;
+    let midElt = Math.floor(arrLength/2);
+    return (arrLength%2 !== 0) ?  arr[midElt] : (arr[midElt]+arr[midElt - 1])/2;
+})(arrSort);
+
+    console.log(result);
+    
+});
+ 
+//-----------------------------------------------------------------------------------//
+
+//6. Remove all the duplicates from the array
+ //function
+ // Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.split(' ').map(str => parseInt(str));
+    
+    var result = checkDuplicate(sm);
+    console.log(result);
+});
+
+function checkDuplicate(arr){
+    var smSet = new Set(arr);
+    var smArr = Array.from(smSet);
+    return smArr;
+}
+
+//iife
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+//   console.log(data)
+    var sm = data.map(str => parseInt(str));
+    
+    var result = (function checkDuplicate(arr){
+    var smSet = new Set(arr);
+    var smArr = Array.from(smSet);
+    return smArr;
+})(sm);
+    console.log(result);
+})
+
+//-------------------------------------------------------------------------//
+
+//7. Rotate an array k times and return the rotated array
+//function
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+//   console.log(userInput);
+    var sm = userInput[0].split(' ').map(str => parseInt(str));
+    let k = parseInt(userInput[1]);
+    let result = rotateArray(sm, k);
+    console.log(result);
+
+});
+
+function rotateArray(arr, rotationIndex){
+    if(arr.length > rotationIndex){
+        arr.unshift(...arr.splice(-rotationIndex));
+    }else{
+        for(let i=0; i<rotationIndex; i++){
+            arr.unshift(arr.splice(-1));
+        }
+    }
+    return arr;
+}
+
+//iife
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+//   console.log(userInput);
+    var sm = userInput[0].split(' ').map(str => parseInt(str));
+    let k = parseInt(userInput[1]);
+    let result = (function (arr, rotationIndex){
+    if(arr.length > rotationIndex){
+        arr.unshift(...arr.splice(-rotationIndex));
+    }else{
+        for(let i=0; i<rotationIndex; i++){
+            arr.unshift(arr.splice(-1));
+        }
+    }
+    return arr;
+})(sm, k);
+    console.log(result);
+
+});
+
+//-------------------------------------------------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
