@@ -1,0 +1,85 @@
+1* Generate an API key with given link below 
+ * https://openweathermap.org/guide 
+
+ * Print the current weather data in console- By city name, By lat lang   
+
+ 2. Use HTML tags to create your simple Resume 
+
+ For Practice try out the html cheat sheet - 
+ https://github.com/reach2arunprakash/javascript-101/blob/master/cheatsheets/HTML%20Cheat%20Sheet.pdf 
+
+Meeting Recording:
+ https://us02web.zoom.us/rec/share/bUMv_ZU7XPeQjoV8T00pPWuVDGtjbGaKYDcp5sCg7rpYd4Ap-JvPlJgAr-uNTa_C.Z6lwPO4JzKoC4ytr 
+ Access Passcode: w%WTXuS9
+
+Session link : https://us02web.zoom.us/meeting/register/tZUqdeirpjopGNQsSAuQjqO69mEUTh7DjDGN Passcode : guvi
+----------------------------------------------------------------------------------------------------------------------
+
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 3 js class</title>
+</head>
+<body>
+    <h1> hello </h1>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+//script.js
+//create a request variable 
+var request = new XMLHttpRequest();
+
+//open a connection
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+
+//send the request
+request.send();
+
+var sum = 0;
+//load the response once its ready
+request.onload = function(){
+    var data = JSON.parse(this.response);
+    console.log(data);
+
+    let capital = data[0].capital;
+    getbyCapital(capital);
+
+    let latitude = data[0].latlng[0];
+    let longitude = data[0].latlng[1];
+    getWeather(latitude, longitude);
+
+}
+
+function getWeather(lat, long){
+    let request = new XMLHttpRequest();
+
+    let APIkey = 'fbb3638767109ce2770cd9c221c2aa10';
+    let urlString = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + APIkey;
+    
+    request.open('GET', urlString, true);
+    request.send();
+
+    request.onload = function(){
+        var weatherData = JSON.parse(this.response);
+        console.log(weatherData);
+    }
+}
+
+function getbyCapital(cap){
+    let request = new XMLHttpRequest();
+    let APIkey = 'fbb3638767109ce2770cd9c221c2aa10';
+    
+    let urlString = 'https://api.openweathermap.org/data/2.5/weather?q=' + cap + '&appid=' + APIkey;
+    request.open('GET', urlString, true);
+
+    request.send();
+    request.onload = function(){
+        let weatherData = JSON.parse(this.response);
+        console.log(weatherData);
+    }
+}
