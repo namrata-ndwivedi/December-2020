@@ -1,0 +1,31 @@
+Assignment:
+
+•	How do you copy by value a composite data type? - publish as a blog in medium 
+https://namratadwivedi1001.medium.com/how-do-you-copy-by-value-a-composite-data-type-be3e75847e69
+
+•	Difference between HTTP1.1 vs HTTP2 - - publish as a blog in medium
+https://namratadwivedi1001.medium.com/difference-between-http1-1-vs-http2-b6a440d0607c
+
+•	 why there is a difference in behavior for copying contents in primitive and non primitive type? 
+- publish as a blog in medium. 
+https://namratadwivedi1001.medium.com/javascript-difference-in-behaviour-for-copying-contents-in-primitive-and-non-primitive-type-6ac4dc005ca8
+
+•	Write a blog about objects and its internal representation in Javascript in medium. 
+https://namratadwivedi1001.medium.com/objects-and-its-internal-representation-in-javascript-f9f8d092d0c5
+
+•	 execute and see at least 15 cli commands. like mkdir, ls etc. 
+done!!
+
+•	 What is the difference between window, screen, and document in Javascript? - publish as a blog in medium.
+https://namratadwivedi1001.medium.com/difference-between-window-screen-and-document-in-javascript-7e40d6bf7c91
+
+•	 JSON task (solve all the problems) -
+ https://medium.com/@reach2arunprakash/guvi-zen-code-sprint-javascript-practice-problems-in-json-objects-and-list-49ac3356a8a5 
+ (Submitted in Github)
+ https://github.com/namrata-ndwivedi/December-2020/blob/3-Dec-2020/JSONTasks.js
+
+•	 Try the rest countries api below. Extract and print the flag url of all the countries in console. 
+Use the html template. https://restcountries.eu/rest/v2/all
+(Submitted in Github)
+https://github.com/namrata-ndwivedi/December-2020/tree/3-Dec-2020
+
